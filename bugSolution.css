@@ -1,0 +1,25 @@
+/* Correcting the spacing issues in calc() */
+#element1 {
+  width: calc(100% - 20px);
+}
+
+/* Correcting the order of operations in nested calc() */
+#element2 {
+  height: calc(calc(50% + 20px) - 10px); /* Corrected order */
+}
+
+/* Correcting data type inconsistency */
+#element3 {
+  margin: calc(10% + 20px); /* Should be corrected by using consistent units  */
+}
+/* Better to use consistent units to avoid ambiguity and potential errors*/
+#element3 {
+  margin: calc(10% + 20px); /* Still might encounter issues due to the differing units */
+}
+#element3{
+  margin: calc(100px + 20%);
+}
+/* A more robust solution is to use consistent units */
+#element3 {
+  margin: calc((10 / 100) * 100px + 20px);
+}
